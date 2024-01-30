@@ -141,6 +141,10 @@ function main() {
         case '5':
             showDoneList();
             break;
+        default : //Case where the user gave the wrong input
+            console.log('The input you entered is not valid. Please try again');
+            main();
+            break;
     }
 }
 
