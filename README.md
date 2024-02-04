@@ -19,3 +19,6 @@ The console app always works by entering the index of the item or command we wan
 
 Importation of fs (modify files) and readline-sync (user interaction).
 Clone the project in your computer and run npm i in the terminal.
+
+updates: 
+Now the list can be used non-stop
