@@ -114,37 +114,39 @@ function showDoneList(){
 }
 
 function main() {
-    MenuFunction();
+    while (true){
+        MenuFunction();
 
-    const choice = readline.question('Choisissez une option: ');
+        const choice = readline.question('Choisissez une option: ');
 
-    switch (choice) {
-        case '1':
-            showTodoList();
-            break;
-        case '2':
-            showTodoList();
-            const newTask = readline.question('Enter the new task: ');
-            addTaskCommand(newTask);
-            break;
-        case '3':
-            showTodoList();
-            const delTask = readline.question('Enter the task you want to delete: ');
-            deleteTask(delTask);
-            break;
-        case '4':
-            showTodoList();
-            const index_del = readline.question('Choose an item to mark as complete: ');
-            MarkAsComplete(index_del);
-            showDoneList();
-            break;
-        case '5':
-            showDoneList();
-            break;
-        default : //Case where the user gave the wrong input
-            console.log('The input you entered is not valid. Please try again');
-            main();
-            break;
+        switch (choice) {
+            case '1':
+                showTodoList();
+                break;
+            case '2':
+                showTodoList();
+                const newTask = readline.question('Enter the new task: ');
+                addTaskCommand(newTask);
+                break;
+            case '3':
+                showTodoList();
+                const delTask = readline.question('Enter the task you want to delete: ');
+                deleteTask(delTask);
+                break;
+            case '4':
+                showTodoList();
+                const index_del = readline.question('Choose an item to mark as complete: ');
+                MarkAsComplete(index_del);
+                showDoneList();
+                break;
+            case '5':
+                showDoneList();
+                break;
+            default : //Case where the user gave the wrong input
+                console.log('The input you entered is not valid. Please try again');
+                main();
+                break;
+        }
     }
 }
 
