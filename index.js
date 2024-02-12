@@ -8,10 +8,15 @@ $ 1 Display remaining items
 $ 2 Add a new item
 $ 3 Delete an item
 $ 4 Complete an item
-$ 5 Display done items`;
+$ 5 Display done items
+
+$ 6 Quit
+`;
 
     console.log(Menu);
 };
+
+let running = true;
 
 function addTaskCommand(newTask) {
     fs.appendFileSync('todo.txt', `\n${newTask}`);
@@ -114,7 +119,7 @@ function showDoneList(){
 }
 
 function main() {
-    while (true){
+    while (running){
         MenuFunction();
 
         const choice = readline.question('Choisissez une option: ');
@@ -141,6 +146,10 @@ function main() {
                 break;
             case '5':
                 showDoneList();
+                break;
+            case '6':
+                console.log('GoodBye');
+                running = false ;
                 break;
             default : //Case where the user gave the wrong input
                 console.log('The input you entered is not valid. Please try again');
